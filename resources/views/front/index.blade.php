@@ -19,8 +19,13 @@
                 </ul>
                 <p class="text-danger">Внимание! Мы НЕ подключаем к газу бесплатно по социальной программе. Благодарим за понимание.</p>
             </div>
-            <div class="col">
-                <form action="" class="border border-light p-3" onsubmit="event.preventDefault()">
+            <div class="col d-flex align-items-center">
+                <form action="" class="border border-light p-3 w-100" onsubmit="event.preventDefault()">
+                    <div class="row mb-2">
+                        <div class="col">
+                            <h5>Оставьте заявку уже сегодня!</h5>
+                        </div>
+                    </div>
                     <div class="row">
                         <div class="col">
                             <div class="form-group">
