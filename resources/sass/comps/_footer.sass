@@ -1,0 +1,39 @@
+footer
+    padding: 24px 0
+    background: $color-main
+    color: $color-white
+    a
+        color: $color-white
+        text-decoration: none
+        transition: all .3s
+        &:hover
+            color: $color-secondary
+    ul
+        list-style: none
+        padding: 0
+        margin: 0
+        li
+            padding: 6px 0
+            display: flex
+            align-items: center
+            i
+                margin-right: 12px
+                height: 30px
+                width: 30px
+                display: flex !important
+                align-items: center
+                justify-content: center
+                border: 1px solid $color-white
+    .logo
+        display: flex
+        align-items: center
+        img
+            margin-right: 12px
+            max-height: 50px
+        p
+            font-size: .9rem
+            white-space: nowrap
+            margin-bottom: 0
+            font-weight: bold
+            @media(min-width: 768px)
+                font-size: 1.2rem

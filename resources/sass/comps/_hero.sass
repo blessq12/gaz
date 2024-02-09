@@ -1,0 +1,45 @@
+.hero
+    color: $color-white
+    position: relative
+    min-height: 450px
+    background: green
+    display: flex
+    align-items: center
+    padding: 48px 0
+    background-position: center !important
+    background-repeat: no-repeat !important
+    background-size: cover !important
+    @media(min-width: 768px)
+        min-height: 550px
+    @media(min-width: 992px)
+        min-height: 600px
+
+    h1
+        font-size: 1.5rem
+        @media(min-width: 768px)
+            font-size: 2.5rem
+        font-weight: bold
+        text-transform: uppercase
+    h4
+        font-size: 1rem
+        @media(min-width: 768px)
+            font-size: 2rem
+    ul
+        list-style: none
+        padding: 0
+        margin: 0
+        padding-left: 6px
+        margin-bottom: 12px
+        li
+            font-size: .7rem
+            @media(min-width: 768px)
+                font-size: unset
+            font-weight: 600
+            display: flex
+            &::before
+                content: '-' 
+                margin-right: 6px
+    button[type=submit]
+        width: 100%
+        @media(min-width: 992px)
+            width: unset
