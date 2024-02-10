@@ -7,7 +7,7 @@
         image='/assets/banner.jpg'
     >
         <div class="row row-cols-1 row-cols-lg-2">
-            <div class="col">
+            <div class="col col-lg-10">
                 <h1>
                     Строительство газопровода и подключение к газу в томске и области
                 </h1>
@@ -17,31 +17,13 @@
                     <li>Оптимально проектируем и грамотно монтируем газопровод и оборудование</li>
                     <li>Сдаем надзорным органам</li>
                 </ul>
-                <p class="text-danger">Внимание! Мы НЕ подключаем к газу бесплатно по социальной программе. Благодарим за понимание.</p>
-            </div>
-            <div class="col d-flex align-items-center">
-                <form action="" class="border border-light p-3 w-100" onsubmit="event.preventDefault()">
-                    <div class="row mb-2">
-                        <div class="col">
-                            <h5>Оставьте заявку уже сегодня!</h5>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-group">
-                                <label for="name">Ваше имя</label>
-                                <input type="text" name="name" id="name" class="form-control" required>
-                            </div>
-                            <div class="form-group mb-4">
-                                <label for="tel">Номер телефона</label>
-                                <input type="text" name="tel" id="tel" class="form-control" data-maska="+7 (###) ###-##-##">
-                            </div>
-                            <div class="form-group">
-                                <button type="submit" class="btn btn-light">Оттправить</button>
-                            </div>
-                        </div>
-                    </div>
-                </form>
+                <div class="btn-group mt-3">
+                    <a href="" class="btn btn-light">Позвонить</a>
+                    <a href="" class="btn text-light" style="background: #128c7e">
+                        <i class="fa fa-whatsapp"></i>
+                        Написать в WhatsApp
+                    </a>
+                </div>
             </div>
         </div>
     </x-front.hero>
@@ -75,7 +57,30 @@
                         </div>
                     </div>
                 @endforeach
-                
+                    <div class="col mb-2">
+                        <a href="{{ $company->wa }}" target="_blank" class="text-decoration-none">
+                            <div class="where">
+                                <div class="header rounded bg-image text-light d-flex align-items-center justify-content-center" style="background: #128c7e">
+                                    <div class="text-center">
+                                        <i class="fa fa-whatsapp fa-5x d-block mb-2"></i>
+                                        Бесплатная консультация
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col mb-2">
+                        <a href="tel:{{ $company->telAdd }}" target="_blank" class="text-decoration-none">
+                            <div class="where">
+                                <div class="header rounded bg-image text-light d-flex align-items-center justify-content-center" style="background: #128c7e">
+                                    <div class="text-center">
+                                        <i class="fa fa-phone fa-5x d-block mb-2"></i>
+                                        {{ $company->telAdd }}
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
             </div>
         </div>
     </section>
@@ -106,7 +111,41 @@
                     </p>
                 </div>
                 <div class="col">
-                    <div class="bg-image h-100 w-100 rounded" style="background: url(/assets/cost.jpg);min-height: 250px"></div>
+                    <div class="bg-image h-100 w-100 rounded" style="background: url(/assets/cost.jpeg);min-height: 250px"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pt-0">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="cta rounded">
+                        <div class="row">
+                            <div class="col">
+                                <h2>Бесплатная консультация!</h2>
+                                <p>
+                                    Каждый дом или участок по-своему уникален и невозможно разработать универсальную схему для просчета любых случаев,
+                                    Мы оказываем бесплатные консультации с профессиональной точки зрения и чтобы не вводиить людей в заблуждения о стоимости
+                                </p>
+                                <p>
+                                    Выберите способ для связи:
+                                </p>
+                                <div class="btn-group">
+                                    <a href="tel:{{ $company->phone }}" class="btn btn-light">
+                                        <i class="fa fa-phone"></i>
+                                        Позвонить
+                                    </a>
+                                    <a href="tel:{{ $company->phone }}" class="btn btn-outline-light">
+                                        <i class="fa fa-whatsapp"></i>
+                                        Написать WhatsApp
+                                    </a>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

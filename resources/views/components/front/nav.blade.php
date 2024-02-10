@@ -8,15 +8,16 @@
                 </div>
             </div>
             <div class="col d-none d-lg-block">
-                
             </div>
             <div class="col d-flex justify-content-end">
-                <a href="{{ $company->wa }}" class="btn btn-success btn-sm d-none d-lg-block">
-                    <i class="fa fa-whatsapp"></i>
-                    Написать в WhatsApp
-                </a>
-                <div class="d-lg-none">
-                    <mobile-menu></mobile-menu>
+                <div class="btn-group">
+                    <a href="" class="btn btn-light px-3 btn-sm ">
+                        <i class="fa fa-phone"></i>
+                        Звонок
+                    </a>
+                    <a href="" class="btn px-3 text-light btn-sm" style="background: #128c7e">
+                        <i class="fa fa-whatsapp"></i>
+                    </a>
                 </div>
             </div>
         </div>
