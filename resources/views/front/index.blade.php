@@ -1,7 +1,7 @@
 @extends('layouts.front')
 
-@section('title', 'Заголовок')
-@section('desc', 'Описание')
+@section('title', 'Газификация в Томске и области. ' . $company->name )
+@section('desc', $company->desc )
 @section('content')
     <x-front.hero 
         image='/assets/banner.jpg'
@@ -18,8 +18,8 @@
                     <li>Сдаем надзорным органам</li>
                 </ul>
                 <div class="btn-group mt-3">
-                    <a href="" class="btn btn-light">Позвонить</a>
-                    <a href="" class="btn text-light" style="background: #128c7e">
+                    <a href="tel:{{ $company->tel }}" class="btn btn-light">Позвонить</a>
+                    <a href="{{ $company->wa }}" class="btn text-light" style="background: #128c7e" target="_blank">
                         <i class="fa fa-whatsapp"></i>
                         Написать в WhatsApp
                     </a>
@@ -48,11 +48,11 @@
                     ]
                 @endphp
                 @foreach ($items as $el)
-                    <div class="col mb-2">
+                    <div class="col mb-1">
                         <div class="where">
                             <div class="header rounded bg-image" style="background: url({{ $el->image }})"></div>
                             <div class="content p-2">
-                                <h5>{{ $el->name }}</h5>
+                                <h5 class="mb-0">{{ $el->name }}</h5>
                             </div>
                         </div>
                     </div>
@@ -62,7 +62,7 @@
                             <div class="where">
                                 <div class="header rounded bg-image text-light d-flex align-items-center justify-content-center" style="background: #128c7e">
                                     <div class="text-center">
-                                        <i class="fa fa-whatsapp fa-5x d-block mb-2"></i>
+                                        <i class="fa fa-whatsapp fa-3x d-block mb-2"></i>
                                         Бесплатная консультация
                                     </div>
                                 </div>
@@ -70,11 +70,11 @@
                         </a>
                     </div>
                     <div class="col mb-2">
-                        <a href="tel:{{ $company->telAdd }}" target="_blank" class="text-decoration-none">
+                        <a href="tel:{{ $company->telAdd }}" class="text-decoration-none">
                             <div class="where">
                                 <div class="header rounded bg-image text-light d-flex align-items-center justify-content-center" style="background: #128c7e">
                                     <div class="text-center">
-                                        <i class="fa fa-phone fa-5x d-block mb-2"></i>
+                                        <i class="fa fa-phone fa-3x d-block mb-2"></i>
                                         {{ $company->telAdd }}
                                     </div>
                                 </div>
@@ -137,7 +137,7 @@
                                         <i class="fa fa-phone"></i>
                                         Позвонить
                                     </a>
-                                    <a href="tel:{{ $company->phone }}" class="btn btn-outline-light">
+                                    <a href="tel:{{ $company->phone }}" class="btn btn-outline-light"  target="_blank">
                                         <i class="fa fa-whatsapp"></i>
                                         Написать WhatsApp
                                     </a>

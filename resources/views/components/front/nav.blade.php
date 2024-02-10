@@ -11,11 +11,11 @@
             </div>
             <div class="col d-flex justify-content-end">
                 <div class="btn-group">
-                    <a href="" class="btn btn-light px-3 btn-sm ">
+                    <a href="tel:{{ $company->tel }}" class="btn btn-light px-3 btn-sm">
                         <i class="fa fa-phone"></i>
                         Звонок
                     </a>
-                    <a href="" class="btn px-3 text-light btn-sm" style="background: #128c7e">
+                    <a href="{{ $company->wa }}" class="btn px-3 text-light btn-sm" style="background: #128c7e" target="_blank">
                         <i class="fa fa-whatsapp"></i>
                     </a>
                 </div>

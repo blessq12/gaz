@@ -12,10 +12,10 @@
             <div class="col">
                 <h5 class="border-bottom pb-2">Контакты</h5>
                 <ul>
-                    <a href="tel:{{ $company->tel }}">
+                    <a href="tel:{{ $company->telAdd }}">
                         <li>
                             <i class="fa fa-phone"></i>
-                            {{ $company->tel }}
+                            {{ $company->telAdd }}
                         </li>
                     </a>
                     <a href="mailto:{{ $company->email }}">
