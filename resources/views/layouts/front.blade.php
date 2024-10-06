@@ -14,7 +14,7 @@
 </head>
 <body>
     <div itemscope itemtype="http://schema.org/Organization" style="position: absolute; visibility: hidden;">
-        <span itemprop="name">{{ $company->name }}</span>
+        <span itemprop="name">{{ $company->title }}</span>
         <br>
         <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
             <span itemprop="streetAddress">{{ $company->address }}</span>
@@ -26,7 +26,7 @@
         </div>
 
             Phone: 
-        <span itemprop="telephone">{{ $company->telAdd }}</span>
+        <span itemprop="telephone">{{ $company->phone }}</span>
     </div>
     <div id="app">
         <x-front.nav></x-front.nav>

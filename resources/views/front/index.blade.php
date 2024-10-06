@@ -4,13 +4,16 @@
 @section('desc', $company->desc )
 @section('content')
     <x-front.hero 
-        image='/assets/banner.jpg'
+        :image="session('city') == 'tomsk' ? asset('/assets/tomsk.png') : asset('/assets/asino.jpg')"
     >
         <div class="row row-cols-1 row-cols-lg-2">
             <div class="col col-lg-10">
                 <h1>
-                    Строительство газопровода и подключение к газу в томске и области
-                    {{ session('city') ? session('city') : 'tomsk' }}
+                    @if (session('city') == 'tomsk')
+                        <span>Газификация в Томске: Обеспечьте себе комфорт и безопасность с нашими профессиональными услугами, которые мы предоставляем под ключ!</span>
+                    @elseif (session('city') == 'asino')
+                        <span>Газификация в Асино: Доверьте нам подключение газа и наслаждайтесь уютом и теплом в вашем доме с гарантией качества!</span>
+                    @endif
                 </h1>
                 <h4>Комплексный подход:</h4>
                 <ul>
@@ -18,11 +21,21 @@
                     <li>Оптимально проектируем и грамотно монтируем газопровод и оборудование</li>
                     <li>Сдаем надзорным органам</li>
                 </ul>
-                <div class="btn-group mt-3">
-                    <a href="tel:{{ $company->tel }}" class="btn btn-light">Позвонить</a>
-                    <a href="{{ $company->wa }}" class="btn text-light" style="background: #128c7e" target="_blank">
+                <div class="btn-group mt-4 d-none d-lg-inline-block">
+                    <a href="tel:{{ $company->phone }}" class="btn  btn-light btn-lg">Позвонить</a>
+                    <a href="{{ $company->wa }}" class="btn text-light btn-lg" style="background: linear-gradient(135deg, #25D366, #128C7E);" target="_blank">
                         <i class="fa fa-whatsapp"></i>
                         Написать в WhatsApp
+                    </a>
+                </div>
+                <div class="d-flex d-lg-none justify-content-center w-100 gap-2 mt-4">
+                    <a href="tel:{{ $company->phone }}" class="btn btn-light btn-lg">
+                        <i class="fa fa-phone"></i>
+                        Позвонить
+                    </a>
+                    <a href="{{ $company->wa }}" class="btn text-light d-flex align-items-center justify-content-center" style="background: linear-gradient(135deg, #25D366, #128C7E);" target="_blank">
+                        <i class="fa fa-whatsapp mx-2 fa-2x"></i>
+                        WhatsApp
                     </a>
                 </div>
             </div>
@@ -71,12 +84,12 @@
                         </a>
                     </div>
                     <div class="col mb-2">
-                        <a href="tel:{{ $company->telAdd }}" class="text-decoration-none">
+                        <a href="tel:{{ $company->phone }}" class="text-decoration-none">
                             <div class="where">
                                 <div class="header rounded bg-image text-light d-flex align-items-center justify-content-center" style="background: #128c7e">
                                     <div class="text-center">
                                         <i class="fa fa-phone fa-3x d-block mb-2"></i>
-                                        {{ $company->telAdd }}
+                                        {{ $company->phone }}
                                     </div>
                                 </div>
                             </div>
@@ -136,9 +149,14 @@
                                 <div class="btn-group">
                                     <a href="tel:{{ $company->phone }}" class="btn btn-light">
                                         <i class="fa fa-phone"></i>
-                                        Позвонить
+                                        {{ $company->phone }}
                                     </a>
-                                    <a href="tel:{{ $company->phone }}" class="btn btn-outline-light"  target="_blank">
+                                    <a 
+                                        href="{{ $company->wa }}" 
+                                        class="btn btn-outline-light" 
+                                        style="background: linear-gradient(135deg, #25D366, #128C7E);" 
+                                        target="_blank"
+                                    >
                                         <i class="fa fa-whatsapp"></i>
                                         Написать WhatsApp
                                     </a>
