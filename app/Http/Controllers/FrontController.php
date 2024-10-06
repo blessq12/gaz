@@ -13,11 +13,9 @@ class FrontController extends Controller
         $this->middleware('city');
     }
 
-    public function index(Request $request)
+    public function index(Request $request, $city = null)
     {
-        $client = new IPinfo();
-        $details = $client->getDetails($request->ip());
-        $city = $details->city;
+
         return view('front.index', compact('city'));
     }
 

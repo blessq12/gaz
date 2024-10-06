@@ -15,7 +15,6 @@ use Illuminate\Support\Facades\Session;
 |
 */
 
-Session::forget('city');
 
 Route::controller(FrontController::class)->name('front.')->group(function () {
     Route::get('/', 'index')->name('index');
