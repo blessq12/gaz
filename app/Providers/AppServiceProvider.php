@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use App\Models\City;
 use App\Models\Company;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
@@ -19,8 +21,5 @@ class AppServiceProvider extends ServiceProvider
     /**
      * Bootstrap any application services.
      */
-    public function boot(): void
-    {
-        View::share('company', Company::first());
-    }
+    public function boot(): void {}
 }

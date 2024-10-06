@@ -3,7 +3,16 @@ nav
     color: $color-white
     padding: 12px 0
     position: sticky
+    z-index: 100
     top: 0
+    a
+        color: #fff
+        display: inline-block
+        text-decoration: none
+        
+        &:hover
+            p
+                border-bottom: 2px solid #fff
     .logo
         display: flex
         align-items: center
@@ -15,5 +24,7 @@ nav
             white-space: nowrap
             margin-bottom: 0
             font-weight: bold
+            border-bottom: 2px solid transparent
+            transition: all .3s
             @media(min-width: 768px)
                 font-size: 1.2rem

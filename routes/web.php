@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\FrontController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Session;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,8 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Session::forget('city');
+
 Route::controller(FrontController::class)->name('front.')->group(function () {
-    Route::get('/set-city/{city}', 'setCity')->name('setCity');
-    Route::get('/detect-city', 'detectCity')->name('detectCity');
     Route::get('/', 'index')->name('index');
+    Route::get('/set-city/{city}', 'setCity')->name('setCity');
+    Route::get('/privacy-policy', 'privacyPolicy')->name('privacyPolicy');
 });

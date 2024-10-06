@@ -1,15 +1,23 @@
 <nav>
     <div class="container">
-        <div class="row row-cols-2 row-cols-lg-3 align-items-center">
+        <div class="row row-cols-2 align-items-center">
             <div class="col">
-                <div class="logo">
-                    <img src="/assets/logo-light.png" alt="{{ $company->name }}">
-                    <p>{{ $company->name }}</p>
+                <a href="{{ route('front.index') }}">
+                    <div class="logo">
+                        <img src="/assets/logo-light.png" alt="{{ $company->title }}">
+                    <p>{{ $company->title }}</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col d-flex justify-content-end align-items-center gap-3">
+                <div class="d-flex gap-2 align-items-center justify-content-end">
+                    <span>Город: </span>
+
+                    <select class="form-select form-select-sm" onchange="window.location.href = this.value">
+                        <option value="{{ route('front.setCity', ['city' => 'tomsk']) }}" {{ session('city') == 'tomsk' ? 'selected' : '' }}>Томск</option>
+                        <option value="{{ route('front.setCity', ['city' => 'asino']) }}" {{ session('city') == 'asino' ? 'selected' : '' }}>Асино</option>
+                    </select>
                 </div>
-            </div>
-            <div class="col d-none d-lg-block">
-            </div>
-            <div class="col d-flex justify-content-end">
                 <div class="btn-group">
                     <a href="tel:{{ $company->tel }}" class="btn btn-light px-3 btn-sm">
                         <i class="fa fa-phone"></i>

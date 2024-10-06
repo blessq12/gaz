@@ -1,7 +1,7 @@
 .hero
     color: $color-white
     position: relative
-    min-height: 450px
+    height: 450px
     background: green
     display: flex
     align-items: center
@@ -10,10 +10,15 @@
     background-repeat: no-repeat !important
     background-size: cover !important
     @media(min-width: 768px)
-        min-height: 550px
+        height: 550px
     @media(min-width: 992px)
-        min-height: 600px
-
+        height: 600px
+    &.secondary
+        height: 280px
+        @media(min-width: 768px)
+            height: 380px
+        @media(min-width: 992px)
+            height: 480px
     h1
         font-size: 1.5rem
         @media(min-width: 768px)

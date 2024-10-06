@@ -12,9 +12,9 @@ class Hero extends Component
      * Create a new component instance.
      */
     public function __construct(
-        public $image = '//via.placeholder.com/1920x1080'
-    )
-    {
+        public $image = '//via.placeholder.com/1920x1080',
+        public $front = true,
+    ) {
         //
     }
 

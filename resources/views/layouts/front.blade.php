@@ -32,6 +32,8 @@
         <x-front.nav></x-front.nav>
         @yield('content')
         <x-front.footer></x-front.footer>
+        <cookie-popup></cookie-popup>
     </div>
+    @include('includes.yandexMetrika')
 </body>
 </html>

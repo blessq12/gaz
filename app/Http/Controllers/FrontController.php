@@ -8,10 +8,19 @@ use ipinfo\ipinfo\IPinfo;
 
 class FrontController extends Controller
 {
-    public function index()
+    public function __construct()
     {
-        return view('front.index');
+        $this->middleware('city');
     }
+
+    public function index(Request $request)
+    {
+        $client = new IPinfo();
+        $details = $client->getDetails($request->ip());
+        $city = $details->city;
+        return view('front.index', compact('city'));
+    }
+
 
     public function setCity(Request $request)
     {
@@ -19,12 +28,8 @@ class FrontController extends Controller
         return redirect()->back();
     }
 
-    public function detectCity(Request $request)
+    public function privacyPolicy()
     {
-        $client = new IPinfo();
-        $details = $client->getDetails($request->ip());
-        dd($details);
-        $city = $details->city;
-        return response()->json(['city' => $city]);
+        return view('front.privacy-policy');
     }
 }
