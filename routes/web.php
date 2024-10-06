@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::controller(FrontController::class)->name('front.')->group(function(){
+Route::controller(FrontController::class)->name('front.')->group(function () {
+    Route::get('/set-city/{city}', 'setCity')->name('setCity');
+    Route::get('/detect-city', 'detectCity')->name('detectCity');
     Route::get('/', 'index')->name('index');
 });

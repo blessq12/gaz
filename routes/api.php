@@ -17,3 +17,11 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/company', function () {
+    return Company::first();
+});
+Route::get('/current-city', function () {
+    if (!session('city')) return 'tomsk';
+    return session('city');
+});
