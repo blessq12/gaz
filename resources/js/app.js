@@ -5,6 +5,7 @@
  */
 
 import './bootstrap';
+import 'bootstrap';
 import { createApp } from 'vue';
 
 /**
@@ -34,3 +35,5 @@ Object.entries(import.meta.glob('./**/*.vue', { eager: true })).forEach(([path, 
  */
 
 app.mount('#app');
+
+

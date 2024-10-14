@@ -169,4 +169,7 @@
             </div>
         </div>
     </section>
+    <city-approve
+        :city='@json(session('city'))'
+    ></city-approve>
 @endsection
