@@ -5,9 +5,9 @@
                 <div class="logo mb-3">
                     <img src="/assets/logo-light.png" alt="">
                     <div class="d-block">
-                            <p>ООО СК "Гефест"</p>
-                            <small>Газификация в Томске и области</ы>
-                        </div>
+                        <p>ООО СК "Гефест"</p>
+                        <small>Газификация в Томске и области</small>
+                    </div>
                 </div>
                 <p class="">{{ $company->description }}</p>
             </div>
