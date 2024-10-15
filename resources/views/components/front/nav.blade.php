@@ -5,7 +5,10 @@
                 <a href="{{ route('front.index') }}">
                     <div class="logo">
                         <img src="/assets/logo-light.png" alt="{{ $company->title }}">
-                    <p>{{ $company->title }}</p>
+                        <div class="d-block">
+                            <p>ООО "Гефест"</p>
+                            <small>Газификация в Томске и области</ы>
+                        </div>
                     </div>
                 </a>
             </div>
@@ -18,7 +21,7 @@
                     </select>
                 </div>
                 <div class="btn-group">
-                    <a href="tel:{{ $company->phone }}" class="btn btn-light px-3 btn-sm">
+                    <a href="tel:{{ $defCompany->phone }}" class="btn btn-light px-3 btn-sm">
                         <i class="fa fa-phone"></i>
                         Звонок
                     </a>

@@ -1,20 +1,14 @@
 @extends('layouts.front')
 
-@section('title', 'Газификация в Томске и области. ' . $company->name )
-@section('desc', $company->desc )
+@section('title', 'Газификация в Томске и области - Профессиональные услуги по подключению газа. ООО "Гефест"')
+@section('desc', 'Ищете надежную компанию для газификации в Томске и области? Мы предлагаем полный спектр услуг по подключению газа: от проектирования до монтажа. Гарантируем качество, прозрачные цены и профессиональное сопровождение. Свяжитесь с нами для бесплатной консультации!' )
 @section('content')
     <x-front.hero 
         :image="session('city') == 'tomsk' ? asset('/assets/tomsk.png') : asset('/assets/asino.jpg')"
     >
         <div class="row row-cols-1 row-cols-lg-2">
             <div class="col col-lg-10">
-                <h1>
-                    @if (session('city') == 'tomsk')
-                        <span>Газификация в Томске: Обеспечьте себе комфорт и безопасность с нашими профессиональными услугами, которые мы предоставляем под ключ!</span>
-                    @elseif (session('city') == 'asino')
-                        <span>Газификация в Асино: Доверьте нам подключение газа и наслаждайтесь уютом и теплом в вашем доме с гарантией качества!</span>
-                    @endif
-                </h1>
+                <h1>Газификация: Обеспечьте себе комфорт и безопасность с нашими профессиональными услугами, которые мы предоставляем под ключ! Мы гарантируем высокое качество и надежность!</h1>
                 <h4>Комплексный подход:</h4>
                 <ul>
                     <li>Помогаем получить технические условия</li>
@@ -22,14 +16,14 @@
                     <li>Сдаем надзорным органам</li>
                 </ul>
                 <div class="btn-group mt-4 d-none d-lg-inline-block">
-                    <a href="tel:{{ $company->phone }}" class="btn  btn-light btn-lg">Позвонить</a>
+                    <a href="tel:{{ $defCompany->phone }}" class="btn  btn-light btn-lg">Позвонить</a>
                     <a href="{{ $company->wa }}" class="btn text-light btn-lg" style="background: linear-gradient(135deg, #25D366, #128C7E);" target="_blank">
                         <i class="fa fa-whatsapp"></i>
                         Написать в WhatsApp
                     </a>
                 </div>
                 <div class="d-flex d-lg-none justify-content-center w-100 gap-2 mt-4">
-                    <a href="tel:{{ $company->phone }}" class="btn btn-light btn-lg">
+                    <a href="tel:{{ $defCompany->phone }}" class="btn btn-light btn-lg">
                         <i class="fa fa-phone"></i>
                         Позвонить
                     </a>
@@ -84,12 +78,12 @@
                         </a>
                     </div>
                     <div class="col mb-2">
-                        <a href="tel:{{ $company->phone }}" class="text-decoration-none">
+                        <a href="tel:{{ $defCompany->phone }}" class="text-decoration-none">
                             <div class="where">
                                 <div class="header rounded bg-image text-light d-flex align-items-center justify-content-center" style="background: #128c7e">
                                     <div class="text-center">
                                         <i class="fa fa-phone fa-3x d-block mb-2"></i>
-                                        {{ $company->phone }}
+                                        {{ $defCompany->phone }}
                                     </div>
                                 </div>
                             </div>
@@ -147,9 +141,9 @@
                                     Выберите способ для связи:
                                 </p>
                                 <div class="btn-group">
-                                    <a href="tel:{{ $company->phone }}" class="btn btn-light">
+                                    <a href="tel:{{ $defCompany->phone }}" class="btn btn-light">
                                         <i class="fa fa-phone"></i>
-                                        {{ $company->phone }}
+                                        {{ $defCompany->phone }}
                                     </a>
                                     <a 
                                         href="{{ $company->wa }}" 
