@@ -6,7 +6,7 @@
                     <div class="logo">
                         <img src="/assets/logo-light.png" alt="{{ $company->title }}">
                         <div class="d-block">
-                            <p>ООО "Гефест"</p>
+                            <p>ООО СК "Гефест"</p>
                             <small>Газификация в Томске и области</ы>
                         </div>
                     </div>

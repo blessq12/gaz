@@ -4,7 +4,10 @@
             <div class="col">
                 <div class="logo mb-3">
                     <img src="/assets/logo-light.png" alt="">
-                    <p>{{ $company->title }}</p>
+                    <div class="d-block">
+                            <p>ООО СК "Гефест"</p>
+                            <small>Газификация в Томске и области</ы>
+                        </div>
                 </div>
                 <p class="">{{ $company->description }}</p>
             </div>
@@ -35,8 +38,8 @@
         </div>
         <div class="row border-top py-3">
             <div class="col">
-                <div class="d-flex gap-2">
-                    <p class="mb-0">© 2024 {{ $company->title }}</p>
+                <div class="d-flex gap-2 flex-wrap">
+                    <p class="mb-0">© 2024 ООО СК "Гефест" Газификация в Томске и области</p>
                     <div class="vr"></div>
                     <a href="{{ route('front.privacyPolicy') }}">Политика конфиденциальности</a>
                 </div>
